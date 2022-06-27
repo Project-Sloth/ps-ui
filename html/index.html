@@ -1,19 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>PS-UI</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-	<!-- Font Awesome Icons Import -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="nui://game/ui/jquery.js"></script>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ps-ui</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css">
+    </head>
     <body>
-
         <div class="var-hack">
             <div class="var-splash">
                 <div class="fa var-hacker">&#xf21b;</div>
@@ -39,7 +33,10 @@
         </div>
 
         <div class="scrambler">
-            <div class="scrambler-splash"><div class="fa scrambler-hacker">&#xf21b;</div><span class="scrambler-text">PREPARING INTERFACE...</span></div>
+            <div class="scrambler-splash">
+                <div class="fa scrambler-hacker">&#xf21b;</div>
+                <span class="scrambler-text">PREPARING INTERFACE...</span>
+            </div>
             <div class="scrambler-hack hidden">
                 <div class="scrambler-find"></div>
                 <div class="scrambler-timer">00:00</div>
@@ -47,7 +44,7 @@
             </div>
         </div>
 
-        <canvas id="circle" height="300" width="300"; visibility: hidden></canvas>
+        <canvas id="circle" height="300" width="300"></canvas>
 
         <div id="display-container">
             <div id="display-text"></div>
@@ -62,10 +59,11 @@
         <div class="input"></div>
 
         <div id="showImage">
-            <button class='btn' id="showImageClose">X</button>
-            <div id='imgcontainer'></div>
+            <button class="btn" id="showImageClose">X</button>
+            <div id="imgcontainer"></div>
 		</div>
-        
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@mojs/core@1.2.1/dist/mo.umd.min.js"></script>
         <script src="js/utils.js"></script>
         <script src="js/numbermaze.js"></script>

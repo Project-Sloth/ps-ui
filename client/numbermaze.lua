@@ -1,26 +1,32 @@
 local open = false
 local p = nil
 
-RegisterNUICallback('maze-callback', function(data, cb)
+RegisterNUICallback("maze-callback", function(data, cb)
 	SetNuiFocus(false, false)
+    
     p:resolve(data.success)
     p = nil
     open = false
-    cb('ok')
+
+    cb("ok")
 end)
 
-local function Maze(callback, speed)
-    if speed == nil then speed = 10 end
+local function Maze(cb, speed)
+    local _speed = speed and tonumber(speed) or 10
+
     if not open then
         p = promise.new()
         open = true
+
+        SetNuiFocus(true, true)
         SendNUIMessage({
             action = "maze-start",
-            speed = speed,
+            speed = _speed
         })
-        SetNuiFocus(true, true)
-        callback = Citizen.Await(p)
+
+        local result = Citizen.Await(p)
+
+        cb(result)
     end
 end
-
 exports("Maze", Maze)

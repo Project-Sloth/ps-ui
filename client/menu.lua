@@ -1,10 +1,9 @@
-
 local function CreateMenu(MenuData)
+    SetNuiFocus(true, true)
     SendNUIMessage({
         action = "menu-open",
         data = MenuData
     })
-    SetNuiFocus(true, true)
 end
 exports("CreateMenu", CreateMenu)
 
@@ -21,18 +20,20 @@ RegisterNetEvent("ps-ui:CloseMenu", function()
     CloseMenu()
 end)
 
-RegisterNUICallback('menuClose', function(data, cb)
+RegisterNUICallback("menuClose", function(data, cb)
     CloseMenu()
-    cb('ok')
+
+    cb("ok")
 end)
 
-RegisterNUICallback('MenuSelect', function(data, cb)
-    if data.data.event then 
-        if data.data.server then 
+RegisterNUICallback("MenuSelect", function(data, cb)
+    if data.data.event then
+        if data.data.server then
             TriggerServerEvent(data.data.event, table.unpack(data.data.args))
         else
             TriggerEvent(data.data.event, table.unpack(data.data.args))
         end
     end
-    cb('ok')
+
+    cb("ok")
 end)
