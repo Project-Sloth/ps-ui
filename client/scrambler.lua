@@ -1,29 +1,32 @@
 local open = false
+local scramblerCallback = nil
 
-RegisterNUICallback('scrambler-callback', function(data, cb)
+RegisterNUICallback("scrambler-callback", function(data, cb)
 	SetNuiFocus(false, false)
-    Callbackk(data.success)
+
+    scramblerCallback(data.success)
+
     open = false
-    cb('ok')
+
+    cb("ok")
 end)
 
 local function Scrambler(callback, type, time, mirrored)
-    if type == nil then type = "alphabet" end
-    if time == nil then time = 10 end
-    if mirrored == nil then mirrored = 0 end
+    local _type = type and type or "alphabet"
+    local _time = time and tonumber(time) or 10
+    local _mirrored = mirrored and tonumber(mirrored) or 0
 
     if not open then
-        Callbackk = callback
+        scramblerCallback = callback
         open = true
+
+        SetNuiFocus(true, true)
         SendNUIMessage({
             action = "scrambler-start",
-            type = type,
-            time = time,
-            mirrored = mirrored,
-
+            type = _type,
+            time = _time,
+            mirrored = _mirrored
         })
-        SetNuiFocus(true, true)
     end
 end
-
 exports("Scrambler", Scrambler)

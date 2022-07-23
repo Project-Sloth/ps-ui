@@ -3,17 +3,17 @@ local function SetDisplay(bool, img)
     SendNUIMessage({
         type = "showImage",
         image = img,
-        status = bool,
+        status = bool
     })
 end
 
 local function ShowImage(img)
     SetDisplay(true, img)
 end
+exports("ShowImage", ShowImage)
 
 RegisterNUICallback("showItemImage-callback", function(data, cb)
     SetDisplay(false)
-    cb('ok')
-end)
 
-exports("ShowImage", ShowImage)
+    cb("ok")
+end)

@@ -1,25 +1,30 @@
 local open = false
+local varCallback = nil
 
-RegisterNUICallback('var-callback', function(data, cb)
+RegisterNUICallback("var-callback", function(data, cb)
 	SetNuiFocus(false, false)
-    Callbackk(data.success)
+
+    varCallback(data.success)
+
     open = false
-    cb('ok')
+
+    cb("ok")
 end)
 
 local function VarHack(callback, blocks, speed)
-    if speed == nil or (speed < 2) then speed = 20 end
-    if blocks == nil or (blocks < 1 or blocks > 15) then blocks = 5 end
+    local _blocks =  (blocks or blocks < 1 or blocks > 15) and tonumber(blocks) or 5
+    local _speed = (speed or speed < 2) and tonumber(speed) or 10
+
     if not open then
         open = true
-        Callbackk = callback
+        varCallback = callback
+
         SetNuiFocus(true, true)
         SendNUIMessage({
             action = "var-start",
-            blocks = blocks,
-            speed = speed,
+            blocks = _blocks,
+            speed = _speed
         })
     end
 end
-
 exports("VarHack", VarHack)
