@@ -17,5 +17,5 @@ function Notify(data) {
         $.when($notification.fadeOut()).done(function() {
             $notification.remove()
         });
-    }, data.length === undefined ? data.length : 2500);
+    }, data.length === undefined ? 2500 : data.length);
 }
