@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@font-face {
+	font-family: roboto;
+	src: url('./assets/fonts/Roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+	font-family: hacker;
+	src: url('./assets/fonts/Hacker-Technology-Font/Hacker.ttf');
+}
+
+@font-face {
+	font-family: arcade;
+	src: url('./assets/fonts/karmatic_arcade/ka1.ttf');
+}
+
+@layer utilities {
+	.ps-text-roboto {
+		font-family: 'roboto';
+	}
+	.ps-font-arcade {
+		font-family: 'arcade';
+	}
+	.ps-font-hacker {
+		font-family: 'hacker';
+	}
+
+	.ps-text-green {
+		color: var(--color-green) !important;
+	}
+	.ps-text-lightgrey {
+		color: var(--color-lightgrey);
+	}
+	.ps-text-darkblue {
+		color: var(--color-darkblue);
+	}
+	.ps-text-red {
+		color: var(--color-red) !important;
+	}
+
+	.ps-border-green {
+		border: 1px solid var(--color-green);
+	}
+	.ps-outline-green {
+		outline: 1px solid var(--color-green);
+	}
+
+	.ps-bg-lightgrey {
+		background-color: var(--color-lightgrey);
+	}
+	.ps-bg-darkblue {
+		background-color: var(--color-darkblue);
+	}
+	.ps-bg-green {
+		background-color: var(--color-green);
+	}
+
+	.ps-bg-green-w-opacity {
+		background-color: rgba(2, 241, 181, 0.2);
+	}
+	.ps-notification-success {
+		background-color: #2ebd2e;
+		color: black;
+		border: 1px solid #158515;
+	}
+	.ps-notification-warning {
+		background-color: #fbb433;
+		border: 1px solid #cf8d15;
+		color: black;
+	}
+	.ps-notification-error {
+		background-color: #cd2222;
+		border: 1px solid #8d0e0e;
+		color: white;
+	}
+	.ps-notification-info {
+		background-color: #33addf;
+		border: 1px solid #1886b3;
+		color: black;
+	}
+}

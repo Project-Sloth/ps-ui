@@ -1,187 +1,209 @@
-![image](https://user-images.githubusercontent.com/82112471/175300046-5835dcc8-475f-46b5-bc2b-2b1fdc6fd760.png)
-### Project Sloth UI
-A single resource made up of several smaller, UI-related scripts for use in your server, accessible via client-side exports. Documentation and previews of each are provided below. We will continue to add to this collection in the future.
+# ps-ui
 
-![image](https://user-images.githubusercontent.com/82112471/175300175-6d6f926f-b3e2-42d3-b564-2e52e737d6c2.png)
+For all support questions, ask in our [Discord](https://www.discord.gg/projectsloth) support chat. 
+Do not create issues on GitHub if you need help. Issues are for bug reporting and new features only.
 
-## Circle Minigame
+# Installation
+* Download ZIP
+* Drag and drop resource into your server files
+* Start resource through server.cfg
+* Restart your server.
 
-```
-exports['ps-ui']:Circle(function(success)
-    if success then
-        print("success")
-	else
-		print("fail")
-	end
-end, 2, 20) -- NumberOfCircles, MS
-```
-![image](https://user-images.githubusercontent.com/70592880/174923967-49718d68-a71d-4df7-8664-a210bee0d1a5.png)
+# Usage
 
-## Number Maze
-```
+* Check exports below.
+* Each interface lua has all the details you need.
+
+# Minigames
+
+# Number Maze
+
+Start a Number Maze game with a callback for success or failure.
+
+```lua 
 exports['ps-ui']:Maze(function(success)
     if success then
         print("success")
-	else
-		print("fail")
-	end
-end, 20) -- Hack Time Limit
+    else
+        print("fail")
+    end
+end, timeLimit)  -- Hack Time Limit in seconds
 ```
-![image](https://user-images.githubusercontent.com/7463741/170586240-fa92a1fc-aac0-48bb-938f-f6f03a63511f.png)
 
-## VAR
+<img src="https://github.com/user-attachments/assets/8b570c43-b84c-46a6-80eb-c64fc751d38d" alt="Number Maze" width="300"/>
+
+# Notify
+
+Display a notification with text, type, and duration.
+
+```lua
+exports['ps-ui']:Notify('Your message', 'notification-type', duration)
 ```
-exports['ps-ui']:VarHack(function(success)
+<img src="https://github.com/user-attachments/assets/8798dd02-6737-4526-9da6-aa78b66492e8" alt="Number Maze" width="300"/>
+
+# Circle
+
+Start a Circle game with a callback for success or failure.
+
+```lua
+exports['ps-ui']:Circle(function(success)
     if success then
         print("success")
-	else
-		print("fail")
-	end
- end, 2, 3) -- Number of Blocks, Time (seconds)
- ```
- ![image](https://user-images.githubusercontent.com/7463741/170586620-51c8648d-1f2c-4ff5-a8d0-755c82b34d58.png)
- 
- ## Thermite
- ```
-exports['ps-ui']:Thermite(function(success)
-    if success then
-        print("success")
-	else
-		print("fail")
-	end
-end, 10, 5, 3) -- Time, Gridsize (5, 6, 7, 8, 9, 10), IncorrectBlocks
- ```
- ![image](https://user-images.githubusercontent.com/7463741/170587067-4c27bf6e-8f5b-4bff-a739-d688be3450fe.png)
-
-## Scrambler
+    else
+        print("fail")
+    end
+end, numCircles, time)  -- Number of Circles, Time in milliseconds
 ```
+
+<img src="https://github.com/user-attachments/assets/39b85867-65f3-46b0-bb87-36aee70971a6" alt="Number Maze" width="300"/>
+
+# Scrambler
+
+Start a Scrambler game with a callback for success or failure.
+
+```lua
 exports['ps-ui']:Scrambler(function(success)
     if success then
         print("success")
-	else
-		print("fail")
-	end
-end, "numeric", 30, 0) -- Type (alphabet, numeric, alphanumeric, greek, braille, runes), Time (Seconds), Mirrored (0: Normal, 1: Normal + Mirrored 2: Mirrored only )
+    else
+        print("fail")
+    end
+end, type, time, mirrored)  -- Type options: alphabet, numeric, alphanumeric, greek, braille, runes; Time in seconds; Mirrored options: 0, 1, 2
 ```
-![image](https://user-images.githubusercontent.com/7463741/170587319-2109661a-8baf-48ff-b4bb-cd18fc10ec73.png)
+<img src="https://github.com/user-attachments/assets/f7831e0d-b80b-44ae-abd3-d950332fcb68" alt="Scrambler" width="300"/>
 
-## Display Text
+# Var
+
+Start a VAR Hack game with a callback for success or failure.
+
+```lua
+exports['ps-ui']:VarHack(function(success)
+    if success then
+        print("success")
+    else
+        print("fail")
+    end
+end, numBlocks, time)  -- Number of Blocks, Time in seconds
 ```
-exports['ps-ui']:DisplayText("Example Text", "primary") -- Colors: primary, error, success, warning, info, mint
+
+<img src="https://github.com/user-attachments/assets/e28b1278-bd36-4421-8994-8830277caa1c" alt="Var" width="300"/>
+
+# Thermite
+
+Start a Thermite game with a callback for success or failure.
+
+```lua
+exports['ps-ui']:Thermite(function(success)
+    if success then
+        print("success")
+    else
+        print("fail")
+    end
+end, time, gridSize, incorrectBlocks)  -- Time in seconds, Grid Size (5-10), Incorrect Blocks
+```
+<img src="https://github.com/user-attachments/assets/b3ccef39-27fc-4eb7-84af-f100a499662e" alt="Thermite" width="300"/>
+
+# Context Menu
+
+Create a menu with submenus and events.
+
+```lua
+exports['ps-ui']:CreateMenu({
+    {
+        id = "examplemenu", -- has to be unique
+        header = "Menu Header",
+        text = "Menu Text",
+        icon = "icon-class",
+        color = "color",
+        event = "event-name",
+        args = {arg1, arg2},
+        server = false,
+        subMenu = {
+            {
+                id = "examplesubmenu", -- has to be unique
+                header = 'Submenu Header',
+                icon = 'icon-class',
+                color = 'color',
+                event = "event-name",
+                args = {arg1, arg2},
+            },
+        },
+    },
+}) 
+```
+
+Hide the currently displayed menu
+
+```lua
+exports['ps-ui']:HideMenu()
+```
+
+<img src="https://github.com/user-attachments/assets/5389ad62-02f8-4b86-a533-e1c2ffc0f9b8" alt="Context Menu" width="300"/>
+
+# Status
+
+### Toggle the display of status with information
+
+```lua
+exports['ps-ui']:StatusShow("Title", "Description", "icon", 
+{
+    {key = "Key1", value = "Value1"}, 
+    {key = "Key2", value = "Value2"}, 
+    {key = "Key3", value = "Value3"}
+})
+```
+
+<img src="https://github.com/user-attachments/assets/faee2f3c-a198-46c8-86c5-c0a495ef678b" alt="Status" width="300"/>
+
+# Display Text
+
+Display text with a specified color
+
+```lua
+exports['ps-ui']:DisplayText("Your text", "color")
+```
+
+Hide the currently displayed text
+
+```lua
 exports['ps-ui']:HideText()
 ```
-![image](https://user-images.githubusercontent.com/7463741/170587380-0629b5fc-80d6-4c2a-85c1-4e5426167197.png)
 
-## Status UI
-```
-exports['ps-ui']:StatusShow("Area Dominance", {
-  "Gang: Ballas",
-  "Influence: %100",
-})
-exports['ps-ui']:StatusUpdate("Area Dominance", {
-  "Gang: Ballas",
-  "Influence: %99",
-})
-exports['ps-ui']:StatusHide()
-```
-![image](https://user-images.githubusercontent.com/7463741/170587637-57217095-29ab-460e-9933-123fb0500e12.png)
+<img src="https://github.com/user-attachments/assets/741184fb-c5c8-4209-9bb5-2c4a643f792a" alt="Show Text" width="300"/>
 
-## Menus
-```
-exports['ps-ui']:CreateMenu({
-        {
-            header = "header1",
-            text = "text1",
-            icon = "fa-solid fa-circle",
-            color = "red",
-            event = "event:one",
-            args = {
-                1,
-                "two",
-                "3",
-            },
-            server = false,
-            
-        },
-        {
-            header = "header2",
-            text = "text3",
-            icon = "fa-solid fa-circle",
-            color = "blue",
-            event = "event:two",
-            args = {
-                1,
-                "two",
-                "3",
-            },
-            server = false,
-        },
-        {
-            header = "header3",
-            text = "text3",
-            icon = "fa-solid fa-circle",
-            color = "green",
-            event = "event:three",
-            args = {
-                1,
-                "two",
-                "3",
-            },
-            server = true,
-        },
-        {
-            header = "header4",
-            text = "text4",
-            event = "event:four",
-            args = {
-                1,
-                "two",
-                "3",
-            },
-        },
-    })
-```
-![image](https://user-images.githubusercontent.com/7463741/170587722-4dca53b1-c2b2-43a9-990e-37bafb202a7e.png)
+# Input
 
-## Input
+Display an input form and print the input values.
 
-```
+```lua
 local input = exports['ps-ui']:Input({
-        title = "Test",
-        inputs = {
-            {
-                type = "text",
-                placeholder = "test2"
-            },
-            {
-                type = "password",
-                placeholder = "password"
-            },
-            {
-                type = "number",
-                placeholder = "666"
-            },
-        }
-    })
-```
-![image](https://user-images.githubusercontent.com/7463741/170587795-236d2826-c510-4622-9580-dc2cd3bf1902.png)
-
-## Show Image
-
-```
-exports['ps-ui']:ShowImage("https://user-images.githubusercontent.com/91661118/168956591-43462c40-e7c2-41af-8282-b2d9b6716771.png")
-```
-![image](https://user-images.githubusercontent.com/70592880/173483722-53c40c11-faf0-42d8-98b2-ec97d99c3a39.png)
-
-## Notify
-
-```
-exports['ps-ui']:Notify(text, texttype, length)
+    {
+        id = '1',
+        label = 'Label',
+        type = "input-type",
+        icon = "icon-class"
+    },
+    -- Add more inputs as needed
+})
+for k, v in pairs(input) do 
+    print(k, v.id, v.value)
+end
 ```
 
-![image](https://user-images.githubusercontent.com/91788613/202788087-43911c2b-0a36-4f3a-9641-a4e13b36034e.png)
+<img src="https://github.com/user-attachments/assets/93aa24f9-824b-47cf-bc1e-bbf993edca51" alt="Input" width="300"/>
 
-CREDITS: 
-- https://github.com/sharkiller/nopixel_minigame
-- https://github.com/iLLeniumStudios/is-statushud
-- https://github.com/tnj-development/tnj-notify
+# Show Image
+
+Displays an image from a URL.
+
+```lua
+exports['ps-ui']:ShowImage("imageURL")
+```
+<img src="https://github.com/user-attachments/assets/918f7ba9-6fab-4c47-8936-56cdd4d188e0" alt="Show Image" width="300"/>
+
+# Credits
+* [complexza](https://github.com/complexza)
+* [MonkeyWhisper](https://github.com/MonkeyWhisper)
+* [Snipe](https://github.com/pushkart2)
+* [Skeleton Networks](https://github.com/skeletonnetworks)
+* Project Sloth Team
