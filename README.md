@@ -29,8 +29,7 @@ exports['ps-ui']:Maze(function(success)
     end
 end, timeLimit)  -- Hack Time Limit in seconds
 ```
-
-<img src="https://github.com/user-attachments/assets/8b570c43-b84c-46a6-80eb-c64fc751d38d" alt="Number Maze" width="300"/>
+<img src="https://github.com/user-attachments/assets/c75772bf-a4c9-4b0e-9678-a916bcdb5f3a" alt="Number Maze" width="300"/>
 
 # Notify
 
