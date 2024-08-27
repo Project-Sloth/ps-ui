@@ -166,7 +166,7 @@ Hide the currently displayed text
 exports['ps-ui']:HideText()
 ```
 
-<img src="https://github.com/user-attachments/assets/741184fb-c5c8-4209-9bb5-2c4a643f792a" alt="Show Text" width="300"/>
+<img src="https://github.com/user-attachments/assets/64690b39-3d86-4056-96ec-0e325b545575" alt="Show Text" width="300"/>
 
 # Input
 
