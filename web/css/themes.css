@@ -1,0 +1,16 @@
+:root {
+	--color-green: #02f1b5;
+    --color-palegreen: #039672;
+	--color-darkblue: #131313;
+    --color-blue: #0057ae;
+	--color-lightgrey: #dadada;
+    --color-white: #ffffff;
+	--color-black: #000000;
+	--color-darkgrey: #6a6a6a;
+    --color-red: #e10404;
+
+    --cube-bg-darkgreen: #0f2a25;
+
+	font-size: 0.8em;
+	font-family: 'roboto', sans-serif;
+}
