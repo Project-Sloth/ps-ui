@@ -38,7 +38,7 @@ Display a notification with text, type, and duration.
 ```lua
 exports['ps-ui']:Notify('Your message', 'notification-type', duration)
 ```
-<img src="https://github.com/user-attachments/assets/8798dd02-6737-4526-9da6-aa78b66492e8" alt="Number Maze" width="300"/>
+<img src="https://github.com/user-attachments/assets/e8bfeb42-0459-4630-88db-938a83f14db9" alt="Number Maze" width="300"/>
 
 # Circle
 
@@ -54,7 +54,7 @@ exports['ps-ui']:Circle(function(success)
 end, numCircles, time)  -- Number of Circles, Time in milliseconds
 ```
 
-<img src="https://github.com/user-attachments/assets/39b85867-65f3-46b0-bb87-36aee70971a6" alt="Number Maze" width="300"/>
+<img src="https://github.com/user-attachments/assets/a22280ce-d0d8-4b52-b24e-84e27dfac65e" alt="Number Maze" width="300"/>
 
 # Scrambler
 
@@ -69,7 +69,7 @@ exports['ps-ui']:Scrambler(function(success)
     end
 end, type, time, mirrored)  -- Type options: alphabet, numeric, alphanumeric, greek, braille, runes; Time in seconds; Mirrored options: 0, 1, 2
 ```
-<img src="https://github.com/user-attachments/assets/f7831e0d-b80b-44ae-abd3-d950332fcb68" alt="Scrambler" width="300"/>
+<img src="https://github.com/user-attachments/assets/b667785f-3901-46bd-883b-6de8473175c7" alt="Scrambler" width="300"/>
 
 # Var
 
@@ -84,8 +84,7 @@ exports['ps-ui']:VarHack(function(success)
     end
 end, numBlocks, time)  -- Number of Blocks, Time in seconds
 ```
-
-<img src="https://github.com/user-attachments/assets/e28b1278-bd36-4421-8994-8830277caa1c" alt="Var" width="300"/>
+<img src="https://github.com/user-attachments/assets/5f914e19-28cf-44f0-a675-24551c564259" alt="Var" width="300"/>
 
 # Thermite
 
@@ -100,7 +99,7 @@ exports['ps-ui']:Thermite(function(success)
     end
 end, time, gridSize, incorrectBlocks)  -- Time in seconds, Grid Size (5-10), Incorrect Blocks
 ```
-<img src="https://github.com/user-attachments/assets/b3ccef39-27fc-4eb7-84af-f100a499662e" alt="Thermite" width="300"/>
+<img src="https://github.com/user-attachments/assets/57ab24fc-fd64-4286-9f0e-b7b4685bd45b" alt="Thermite" width="300"/>
 
 # Context Menu
 
@@ -137,7 +136,7 @@ Hide the currently displayed menu
 exports['ps-ui']:HideMenu()
 ```
 
-<img src="https://github.com/user-attachments/assets/5389ad62-02f8-4b86-a533-e1c2ffc0f9b8" alt="Context Menu" width="300"/>
+<img src="https://github.com/user-attachments/assets/a0c09553-599b-4a1a-bdf2-cc5216c2f06b" alt="Context Menu" width="300"/>
 
 # Status
 
@@ -151,8 +150,7 @@ exports['ps-ui']:StatusShow("Title", "Description", "icon",
     {key = "Key3", value = "Value3"}
 })
 ```
-
-<img src="https://github.com/user-attachments/assets/faee2f3c-a198-46c8-86c5-c0a495ef678b" alt="Status" width="300"/>
+<img src="https://github.com/user-attachments/assets/12cd55f8-33e9-4f5f-975d-66a4881ce7fd" alt="Status" width="300"/>
 
 # Display Text
 
@@ -188,8 +186,7 @@ for k, v in pairs(input) do
     print(k, v.id, v.value)
 end
 ```
-
-<img src="https://github.com/user-attachments/assets/93aa24f9-824b-47cf-bc1e-bbf993edca51" alt="Input" width="300"/>
+<img src="https://github.com/user-attachments/assets/c0dce6ca-c025-4c19-99b2-7ad137e61273" alt="Input" width="300"/>
 
 # Show Image
 
@@ -198,7 +195,7 @@ Displays an image from a URL.
 ```lua
 exports['ps-ui']:ShowImage("imageURL")
 ```
-<img src="https://github.com/user-attachments/assets/918f7ba9-6fab-4c47-8936-56cdd4d188e0" alt="Show Image" width="300"/>
+<img src="https://github.com/user-attachments/assets/646d2f48-3e36-414c-8cd4-3323832c30f0" alt="Show Image" width="300"/>
 
 # Credits
 * [complexza](https://github.com/complexza)
