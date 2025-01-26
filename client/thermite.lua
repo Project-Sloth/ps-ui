@@ -16,7 +16,7 @@ local correctBlocksBasedOnGrid = {
 local function thermite(cb, time, gridsize, wrong, correctBlocks)
     -- Default values if parameters are not provided
     if time == nil then time = 10 end
-    if gridsize == nil then gridsize = 6 end
+    if gridsize <= 5 or gridsize == nil then gridsize = 6 end 
     if wrong == nil then wrong = 3 end
 
     local correctBlockCount = correctBlocks or correctBlocksBasedOnGrid[gridsize]
